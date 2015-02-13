@@ -7,7 +7,7 @@ public class Auction {
 	}
 	
 	private double startPrice, reservePrice;
-	private datetime closeDate;
+	private LocalDateTime closeDate;
 	private char status;
 	
 	public void PlaceBid(){
