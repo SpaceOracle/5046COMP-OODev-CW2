@@ -8,4 +8,11 @@ public class Seller extends User {
 		
 	}
 	
+	public bool IsBlocked(){
+		
+	}
+	
+	public void SetBlocked(){
+		
+	}
 }
