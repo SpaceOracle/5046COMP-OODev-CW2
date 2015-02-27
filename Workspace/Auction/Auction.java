@@ -1,6 +1,6 @@
 package Auction;
 
-public class Auction {
+public class Auction implements Blockable {
 
 	public Auction() {
 		
