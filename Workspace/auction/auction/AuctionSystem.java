@@ -5,7 +5,7 @@ import auction.User;
 public class AuctionSystem {
 
 	public AuctionSystem() {
-		User admin = new User("admin","changeme");
+		User admin = new Buyer("admin","changeme");
 		
 		System.out.println("Please selection an option:");
 		System.out.println("1. Login");

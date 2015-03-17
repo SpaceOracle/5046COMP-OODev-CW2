@@ -1,5 +1,7 @@
 package auction;
 
+import java.time.LocalDateTime;
+
 public class Bid {
 
 	public Bid(){

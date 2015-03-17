@@ -6,5 +6,5 @@ public class Item {
 		
 	}
 	
-	private string description;
+	private String description;
 }
