@@ -4,7 +4,7 @@ import User;
 
 public class Seller extends User implements Blockable {
 
-	public Seller(){
+	public Seller(string user, string pass){
 		
 	}
 	

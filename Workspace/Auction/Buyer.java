@@ -4,7 +4,7 @@ import User;
 
 public class Buyer extends User {
 
-	public Buyer(){
+	public Buyer(string user, string pass){
 		
 	}
 	
