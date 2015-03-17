@@ -1,4 +1,6 @@
-package Auction;
+package auction;
+
+import java.time.LocalDateTime;
 
 public class Auction implements Blockable {
 
@@ -22,7 +24,8 @@ public class Auction implements Blockable {
 		
 	}
 	
-	public bool IsBlocked(){
+	public boolean IsBlocked(){
+		return false;
 		
 	}
 	

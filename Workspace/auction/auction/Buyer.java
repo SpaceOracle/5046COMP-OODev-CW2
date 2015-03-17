@@ -1,6 +1,6 @@
-package Auction;
+package auction;
 
-import Auction.User;
+import auction.User;
 
 public class Buyer extends User {
 

@@ -1,13 +1,13 @@
-package Auction;
+package auction;
 
-import Auction.User;
+import auction.User;
 
-public class System {
+public class AuctionSystem {
 
-	public System() {
+	public AuctionSystem() {
 		User admin = new User("admin","changeme");
 		
-		System.out.println("Please choose an option:");
+		System.out.println("Please selection an option:");
 		System.out.println("1. Login");
 		System.out.println("2. Register");
 	}

@@ -1,4 +1,4 @@
-package Auction;
+package auction;
 
 public class Bid {
 

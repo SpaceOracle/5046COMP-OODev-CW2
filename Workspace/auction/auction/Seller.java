@@ -1,6 +1,6 @@
-package Auction;
+package auction;
 
-import Auction.User;
+import auction.User;
 
 public class Seller extends User implements Blockable {
 
@@ -9,7 +9,7 @@ public class Seller extends User implements Blockable {
 		password = pass;		
 	}
 	
-	public bool IsBlocked(){
+	public boolean IsBlocked(){
 		
 	}
 	
