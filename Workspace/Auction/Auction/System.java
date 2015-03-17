@@ -1,9 +1,11 @@
 package Auction;
 
+import Auction.User;
+
 public class System {
 
 	public System() {
-		user admin = new user("admin","changeme");
+		User admin = new User("admin","changeme");
 		
 		System.out.println("Please choose an option:");
 		System.out.println("1. Login");

@@ -1,6 +1,6 @@
 package Auction;
 
-import User;
+import Auction.User;
 
 public class Seller extends User implements Blockable {
 
