@@ -3,7 +3,11 @@ package Auction;
 public class System {
 
 	public System() {
+		user admin = new user("admin","changeme");
 		
+		System.out.println("Please choose an option:");
+		System.out.println("1. Login");
+		System.out.println("2. Register");
 	}
 	
 	public void PlaceAuction() {
