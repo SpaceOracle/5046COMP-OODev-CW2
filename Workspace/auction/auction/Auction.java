@@ -9,8 +9,8 @@ public class Auction implements Blockable {
 	private char status;
 	
 	public Auction(double startPrice, double reservePrice, LocalDateTime closeDate) {
-		this.startPrice = sPrice;
-		this.reservePrice = rPrice;
+		this.startPrice = startPrice;
+		this.reservePrice = reservePrice;
 		this.closeDate = closeDate;
 		status = 'O';
 		currentPrice = this.startPrice;
@@ -24,12 +24,15 @@ public class Auction implements Blockable {
 		if(status == 'C'){
 			System.out.println("This auction is no longer available, please try a different auction");
 		}
-		else if(status == )
+		else if(status == 'O')
+		{
+			System.out.println("Auction verified, bid placed");
+		}
 	}
 	
 	public void Close(){
-		if(closeDate.isBefore(LocalDateTime.now())){
-			char = 'C';
+		if(closeDate.isBefore(LocalDateTime.now()) && (status == 'O')){
+			char status = 'C';
 		}
 		else{
 			
