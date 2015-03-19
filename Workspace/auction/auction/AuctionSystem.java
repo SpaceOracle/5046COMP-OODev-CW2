@@ -14,12 +14,15 @@ public class AuctionSystem {
 	
 	static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 	
+	static ArrayList<User> Buyers = new ArrayList<User>();
+	static ArrayList<User> Sellers = new ArrayList<User>();
+	
 	public AuctionSystem() {
 		User adminBuy = new Buyer("admin","changeme");
-		ArrayList<User> Buyers = new ArrayList<User>();
+
 		Buyers.add(adminBuy);
 		User adminSell = new Seller("admin","changeme");
-		ArrayList<User> Sellers = new ArrayList<User>();
+
 		Sellers.add(adminSell);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
@@ -62,7 +65,7 @@ public class AuctionSystem {
 		String pUser = cin.next();
 		System.out.println("Please enter your password");
 		String pPass = cin.next();
-		String type = "sellers";
+		String type = "selling";
 		LogIn(pUser, pPass, type);
 			
 	}
@@ -88,7 +91,16 @@ public class AuctionSystem {
 			if(!pPass.isEmpty()){
 				//get user
 				//compare
-					for(String username : Sellers)
+				if(type == "selling")
+					for(User s : Sellers);
+				if(pUser == Sellers.iterator().next().GetUsername());
+				{
+					if(Sellers.iterator().next().CheckPassword(pPass))
+						return pUser;
+				}
+				else if(type == "buying");
+					for(User b : Buyers);
+					if(pUser == Buyers.iterator().next().GetUsername());
 					//if valid
 					//checkPassword()
 					
