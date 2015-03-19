@@ -1,6 +1,7 @@
 package auction;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import auction.User;
@@ -15,7 +16,11 @@ public class AuctionSystem {
 	
 	public AuctionSystem() {
 		User adminBuy = new Buyer("admin","changeme");
+		ArrayList Buyers = new ArrayList();
+		Buyers.add(adminBuy);
 		User adminSell = new Seller("admin","changeme");
+		ArrayList Sellers = new ArrayList();
+		Sellers.add(adminSell);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 		
@@ -23,7 +28,7 @@ public class AuctionSystem {
 		
 		while(choice != "4"){
 			System.out.println("Please selection an option:");
-			System.out.println("1. Login");
+			System.out.println("1. Create Auction");
 			System.out.println("2. Register");
 			System.out.println("3. Browse");
 			System.out.println("4. Quit");
@@ -33,7 +38,7 @@ public class AuctionSystem {
 		
 			switch(choice){
 			case "1": //Login
-				LogIn();
+				PlaceAuction();
 				break;
 			case "2": //Register
 				SetupAccount();
@@ -42,15 +47,19 @@ public class AuctionSystem {
 				BrowseAuction();
 				break;
 			case "4": //Quit
+				cin.close();
 				System.exit(0);
 			case "0": //Debug close expired auctions
 				//TODO add calls to close in all existing auctions
+				break;
 			}
 		}
 	}
 	
 	public void PlaceAuction() {
 		//No return type?
+		LogIn();
+			
 	}
 	
 	public void BrowseAuction() {
@@ -65,7 +74,8 @@ public class AuctionSystem {
 		//No return type: runs functions and input loop
 	}
 	
-	public void LogIn() {
+	public String LogIn() {
+		return "NULL";
 		
 	}
 	
