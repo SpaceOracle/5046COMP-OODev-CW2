@@ -9,10 +9,21 @@ public abstract class User {
 
 	}
 	
-
-	
-	public Boolean CheckPassword(){
-		return null;
+	public Boolean CheckPassword(String pass){
+		if(pass == password)
+		{
+			return true;
+		}
+		else if(pass != password)
+		{
+			return false;
+		}
 		
+		return false;
+		
+	}
+	
+	public String GetUsername(){
+		return username;
 	}
 }
