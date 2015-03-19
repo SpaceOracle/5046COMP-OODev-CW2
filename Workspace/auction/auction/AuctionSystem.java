@@ -16,10 +16,10 @@ public class AuctionSystem {
 	
 	public AuctionSystem() {
 		User adminBuy = new Buyer("admin","changeme");
-		ArrayList Buyers = new ArrayList();
+		ArrayList<User> Buyers = new ArrayList<User>();
 		Buyers.add(adminBuy);
 		User adminSell = new Seller("admin","changeme");
-		ArrayList Sellers = new ArrayList();
+		ArrayList<User> Sellers = new ArrayList<User>();
 		Sellers.add(adminSell);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
@@ -58,7 +58,12 @@ public class AuctionSystem {
 	
 	public void PlaceAuction() {
 		//No return type?
-		LogIn();
+		System.out.println("Please enter your username");
+		String pUser = cin.next();
+		System.out.println("Please enter your password");
+		String pPass = cin.next();
+		String type = "sellers";
+		LogIn(pUser, pPass, type);
 			
 	}
 	
@@ -74,7 +79,31 @@ public class AuctionSystem {
 		//No return type: runs functions and input loop
 	}
 	
-	public String LogIn() {
+	public String LogIn(String pUser, String pPass, String type) {
+		
+		//if not empty user
+		if(!pUser.isEmpty()){
+		
+			//if not empty password
+			if(!pPass.isEmpty()){
+				//get user
+				//compare
+					for(String username : Sellers)
+					//if valid
+					//checkPassword()
+					
+						//if true
+		
+					//else false
+		
+				//else false
+		
+			//else false
+		
+		//else false
+		
+		}}
+		
 		return "NULL";
 		
 	}
