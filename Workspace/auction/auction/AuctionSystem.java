@@ -9,7 +9,9 @@ public class AuctionSystem {
 
 	Scanner cin = new Scanner(System.in);
 	
-	static Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
+	static int arraySize = 10; //Temporary array size variable
+	
+	static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 	
 	public AuctionSystem() {
 		User adminBuy = new Buyer("admin","changeme");
@@ -25,6 +27,7 @@ public class AuctionSystem {
 			System.out.println("2. Register");
 			System.out.println("3. Browse");
 			System.out.println("4. Quit");
+			System.out.println("0. Close expired auctions"); //Debug menu option
 		
 			choice = cin.next();
 		
@@ -40,6 +43,8 @@ public class AuctionSystem {
 				break;
 			case "4": //Quit
 				System.exit(0);
+			case "0": //Debug close expired auctions
+				//TODO add calls to close in all existing auctions
 			}
 		}
 	}
@@ -51,7 +56,9 @@ public class AuctionSystem {
 	public void BrowseAuction() {
 		//No return type: output to console
 		//Note: Used by PlaceBid and Browsers, don't expect input
-		System.out.println(AuctionSystem.ChocBar);
+		
+		System.out.println(AuctionSystem.auctions);
+		//TODO fix me
 	}
 	
 	public void SetupAccount() {

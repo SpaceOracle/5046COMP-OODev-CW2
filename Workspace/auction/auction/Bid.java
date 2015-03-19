@@ -11,4 +11,16 @@ public class Bid {
 	private double amount;
 	private Buyer who;
 	private LocalDateTime when;
+	
+	public double GetAmount(){
+		return amount;
+	}
+	
+	public void SetAmount(double bid){
+		amount = bid;
+	}
+	
+	public String GetBuyer(){
+		return who.username;
+	}
 }
