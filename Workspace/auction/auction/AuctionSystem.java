@@ -14,16 +14,16 @@ public class AuctionSystem {
 	
 	static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 	
-	static ArrayList<User> Buyers = new ArrayList<User>();
-	static ArrayList<User> Sellers = new ArrayList<User>();
+	static ArrayList<Buyer> Buyers = new ArrayList<Buyer>();
+	static ArrayList<Seller> Sellers = new ArrayList<Seller>();
 	
 	public AuctionSystem() {
 		User adminBuy = new Buyer("admin","changeme");
 
-		Buyers.add(adminBuy);
+		Buyers.add((Buyer) adminBuy);
 		User adminSell = new Seller("admin","changeme");
 
-		Sellers.add(adminSell);
+		Sellers.add((Seller) adminSell);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 		
@@ -66,7 +66,14 @@ public class AuctionSystem {
 		System.out.println("Please enter your password");
 		String pPass = cin.next();
 		String type = "selling";
-		LogIn(pUser, pPass, type);
+		if(LogIn(pUser, pPass, type) == pUser)
+			{
+			System.out.println("Login successful " + pUser);
+			}
+			else if (LogIn(pUser, pPass, type) == "NULL")
+			{
+				System.out.println("Login failed");
+			}
 			
 	}
 	
@@ -85,22 +92,50 @@ public class AuctionSystem {
 	public String LogIn(String pUser, String pPass, String type) {
 		
 		//if not empty user
-		if(!pUser.isEmpty()){
+		if(!pUser.isEmpty())
+		{
 		
 			//if not empty password
-			if(!pPass.isEmpty()){
+			if(!pPass.isEmpty())
+			{
 				//get user
 				//compare
 				if(type == "selling")
-					for(User s : Sellers);
-				if(pUser == Sellers.iterator().next().GetUsername());
+				{
+					for(Seller s : Sellers);
+					if(pUser == "admin")
+					{
+						if(pPass == "changeme")
+						{
+							return pUser;
+						}
+					}
+					/*
+					if(pUser == Sellers.iterator().next().GetUsername());
 				{
 					if(Sellers.iterator().next().CheckPassword(pPass))
 						return pUser;
 				}
+				*/
+					
+				}
 				else if(type == "buying");
-					for(User b : Buyers);
-					if(pUser == Buyers.iterator().next().GetUsername());
+					for(Buyer b: Buyers);
+					if(pUser == "admin")
+					{
+						if(pPass == "changeme")
+						{
+							return pUser;
+						}
+					}				
+					/*if(pUser == Buyers.iterator().next().GetUsername());
+					{
+						if(Buyers.iterator().next().CheckPassword(pPass))
+							return pUser;
+					}
+					*/
+					
+			}
 					//if valid
 					//checkPassword()
 					
@@ -114,7 +149,7 @@ public class AuctionSystem {
 		
 		//else false
 		
-		}}
+		}
 		
 		return "NULL";
 		
