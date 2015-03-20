@@ -11,6 +11,7 @@ public class Bid {
 	private double amount;
 	private Buyer who;
 	private LocalDateTime when;
+	private String buyer;
 	
 	public double GetAmount(){
 		return amount;
@@ -21,7 +22,7 @@ public class Bid {
 	}
 	
 	public String GetBuyer(){
-		return who.username;
+		return buyer;
 	}
 	
 	public void SetWhen(LocalDateTime date){
@@ -32,8 +33,8 @@ public class Bid {
 		return when;
 	}
 	
-	public void SetBuyer(Buyer buyer)
+	public void SetBuyer(String buyer)
 	{
-		who = buyer;
+		this.buyer = buyer;
 	}
 }

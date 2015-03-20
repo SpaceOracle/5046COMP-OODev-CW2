@@ -22,7 +22,7 @@ public class Auction implements Blockable {
 		SetDescription(desc);
 	}
 	
-	public void PlaceBid(){
+	public void PlaceBid(String user){
 		//Scanner bidder = new Scanner(System.in);
 		
 		System.out.println("Please enter a new bid for this item");
@@ -48,6 +48,7 @@ public class Auction implements Blockable {
 				System.out.println("Bid placed, congratulations");
 				currentHighest.SetAmount(t_bid);
 				currentHighest.SetWhen(LocalDateTime.now());
+				currentHighest.SetBuyer(user);
 			}
 		}
 		
