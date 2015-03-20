@@ -115,7 +115,17 @@ public class AuctionSystem {
 			{
 				if(a.GetDescription().equals(aChoice))
 				{
-					a.PlaceBid();
+					String pUser, pPass, type;
+					System.out.println("Please enter your username to bid");
+					pUser = cin.next();
+					System.out.println("Please enter you password");
+					pPass = cin.next();
+					type = "buying";
+					if (LogIn(pUser, pPass, type).equals(pUser)){
+						a.PlaceBid();
+						break;
+					};
+					System.out.println("Login failed, returning to menu");
 					break;
 				}
 			}
@@ -143,7 +153,7 @@ public class AuctionSystem {
 								return pUser;
 						}
 				}
-			} else if (type.equals("buying"))
+			 if (type.equals("buying")) {
 
 				for (Buyer b : Buyers) {
 
@@ -151,12 +161,13 @@ public class AuctionSystem {
 						if (b.CheckPassword(pPass))
 							return pUser;
 					}
-
+				}
 				}
 		}
 
-		return "NULL";
+	
 
 	}
-
+		return "NULL";
+	}
 }
