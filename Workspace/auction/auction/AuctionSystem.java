@@ -27,11 +27,11 @@ public class AuctionSystem {
 
 		Sellers.add((Seller) adminSell);
 		
-		Auction chocbar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
+		Auction chocbar = new Auction(5.0, 10.0, LocalDateTime.of(2014, 7, 15, 12, 30));
 		Auctions.add((Auction) chocbar);
-		Auction toffee = new Auction(3, 10, LocalDateTime.of(2015, 9, 5, 12, 30));
+		Auction toffee = new Auction(3.0, 10.0, LocalDateTime.of(2015, 9, 5, 12, 30));
 		Auctions.add((Auction) toffee);
-		Auction cookie = new Auction(7, 10, LocalDateTime.of(2015, 2, 9, 1, 30));
+		Auction cookie = new Auction(7.0, 10.0, LocalDateTime.of(2015, 2, 9, 1, 30));
 		Auctions.add((Auction) cookie);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));

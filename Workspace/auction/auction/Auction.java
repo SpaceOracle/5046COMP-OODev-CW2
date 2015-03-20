@@ -8,14 +8,17 @@ public class Auction implements Blockable {
 	private double startPrice, reservePrice;
 	private LocalDateTime closeDate;
 	private char status;
-	private Item description;
-	private Bid currentHighest;
+	//private Item description;
+	private Item description = new Item();
+	//private Bid currentHighest;
+	private Bid currentHighest = new Bid();
 	
 	public Auction(double startPrice, double reservePrice, LocalDateTime closeDate) {
 		this.startPrice = startPrice;
 		this.reservePrice = reservePrice;
 		this.closeDate = closeDate;
 		status = 'O';
+		currentHighest.SetAmount(this.startPrice);
 	}
 	
 	public void PlaceBid(){
@@ -57,6 +60,7 @@ public class Auction implements Blockable {
 	public void Close(){
 		if(closeDate.isBefore(LocalDateTime.now()) && (status == 'O')){
 			status = 'C';
+			System.out.println(GetDescription() + " closed");
 		}
 		else{
 			
