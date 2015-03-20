@@ -23,4 +23,8 @@ public class Bid {
 	public String GetBuyer(){
 		return who.username;
 	}
+	
+	public void SetWhen(LocalDateTime date){
+		when = date;
+	}
 }

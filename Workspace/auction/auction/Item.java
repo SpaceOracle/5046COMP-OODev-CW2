@@ -1,6 +1,6 @@
 package auction;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Item {
 
@@ -14,11 +14,11 @@ public class Item {
 		return description;
 	}
 	
-	public void SetDescription(){
-		Scanner cin = new Scanner(System.in);
+	public void SetDescription(String desc){
+		//Scanner cin = new Scanner(System.in);
 		
-		description = cin.next();
+		description = desc;
 		
-		cin.close();
+		//cin.close();
 	}
 }
