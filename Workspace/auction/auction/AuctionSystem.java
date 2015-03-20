@@ -8,9 +8,7 @@ import auction.User;
 
 public class AuctionSystem {
 
-	Scanner cin = new Scanner(System.in);
-	
-	static int arraySize = 10; //Temporary array size variable
+	static Scanner cin = new Scanner(System.in);
 	
 	//static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 	
@@ -31,11 +29,11 @@ public class AuctionSystem {
 		Sellers.add((Seller) Number1);
 		Sellers.add((Seller) Number2);
 		
-		Auction chocbar = new Auction(5.0, 10.0, LocalDateTime.of(2014, 7, 15, 12, 30));
+		Auction chocbar = new Auction(5.0, 10.0, LocalDateTime.of(2014, 7, 15, 12, 30), "chocbar");
 		Auctions.add((Auction) chocbar);
-		Auction toffee = new Auction(3.0, 10.0, LocalDateTime.of(2015, 9, 5, 12, 30));
+		Auction toffee = new Auction(3.0, 10.0, LocalDateTime.of(2015, 9, 5, 12, 30), "toffee");
 		Auctions.add((Auction) toffee);
-		Auction cookie = new Auction(7.0, 10.0, LocalDateTime.of(2015, 2, 9, 1, 30));
+		Auction cookie = new Auction(7.0, 10.0, LocalDateTime.of(2015, 2, 9, 1, 30), "cookie");
 		Auctions.add((Auction) cookie);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
@@ -106,6 +104,25 @@ public class AuctionSystem {
 			if(a.GetStatus() == 'O')
 			{
 				System.out.println(a.GetDescription() + " " + a.GetHighest());
+			}
+		}
+		
+		System.out.println("Enter the name of the auction you would like to bid on");
+		System.out.println("or enter Q to go back to main menu");
+		
+		String aChoice = "default";
+		
+		aChoice = cin.next();
+		
+		if(aChoice != "Q")
+		{
+			for(Auction a: Auctions)
+			{
+				if(a.GetDescription().equals(aChoice))
+				{
+					a.PlaceBid();
+					break;
+				}
 			}
 		}
 	}
