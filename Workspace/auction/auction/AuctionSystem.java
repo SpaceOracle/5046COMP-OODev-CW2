@@ -122,7 +122,7 @@ public class AuctionSystem {
 					pPass = cin.next();
 					type = "buying";
 					if (LogIn(pUser, pPass, type).equals(pUser)){
-						a.PlaceBid();
+						a.PlaceBid(pUser);
 						break;
 					};
 					System.out.println("Login failed, returning to menu");
@@ -134,6 +134,18 @@ public class AuctionSystem {
 
 	public void SetupAccount() {
 		// No return type: runs functions and input loop
+		String pUser, pPass, type;
+		System.out.println("Are you buying, selling or both?");
+		System.out.println("1. Buying");
+		System.out.println("2. Selling");
+		System.out.println("3. Buying and Selling");
+		
+		
+		
+		
+		System.out.println("Please enter a username");
+		pUser = cin.next();
+		
 	}
 
 	public String LogIn(String pUser, String pPass, String type) {
