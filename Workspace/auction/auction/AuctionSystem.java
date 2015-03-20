@@ -140,7 +140,64 @@ public class AuctionSystem {
 		System.out.println("2. Selling");
 		System.out.println("3. Buying and Selling");
 		
+		type = cin.next();
 		
+		System.out.println("Please enter a username");
+		pUser = cin.next();
+		
+		
+		switch (type){
+		case "1":
+			for (Buyer b : Buyers)
+				if (pUser.equals(b.GetUsername())){
+					System.out.println("That username is taken, returning to menu");
+					return;
+				}
+		case "2":
+			for (Seller s : Sellers)
+				if (pUser.equals(s.GetUsername())){
+					System.out.println("That username is taken, returning to menu");
+					return;
+				}
+		case "3":
+			for (Buyer b : Buyers)
+				if (pUser.equals(b.GetUsername())){
+					System.out.println("That username is taken, returning to menu");
+					return;
+				}
+			for (Seller s : Sellers)
+				if (pUser.equals(s.GetUsername())){
+					System.out.println("That username is taken, returning to menu");
+					return;
+				}
+			
+			System.out.println("Please enter a password");
+			pPass = cin.next();
+			
+			
+			switch (type){
+			case "1":
+				User newBuy = new Buyer(pUser, pPass);
+				Buyers.add((Buyer) newBuy);
+				break;
+				
+			case "2":
+				User newSell = new Seller(pUser, pPass);
+				Sellers.add((Seller) newSell);
+				break;
+				
+			case "3":
+				User newComboBuy = new Buyer(pUser, pPass);
+				Buyers.add((Buyer) newComboBuy);
+
+				User newComboSell = new Seller(pUser, pPass);
+				Sellers.add((Seller) newComboSell);
+				break;
+			}
+			
+			System.out.println("Registration successfull");
+			return;
+		};
 		
 		
 		System.out.println("Please enter a username");
