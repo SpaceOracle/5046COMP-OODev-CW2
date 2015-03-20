@@ -24,8 +24,12 @@ public class AuctionSystem {
 
 		Buyers.add((Buyer) adminBuy);
 		User adminSell = new Seller("admin","changeme");
+		User Number1 = new Seller("1","1");
+		User Number2 = new Seller("2","2");
 
 		Sellers.add((Seller) adminSell);
+		Sellers.add((Seller) Number1);
+		Sellers.add((Seller) Number2);
 		
 		Auction chocbar = new Auction(5.0, 10.0, LocalDateTime.of(2014, 7, 15, 12, 30));
 		Auctions.add((Auction) chocbar);
@@ -123,7 +127,8 @@ public class AuctionSystem {
 				//compare
 				if(type.equals("selling"))
 				{
-					//for(Seller s : Sellers);
+					for(Seller s : Sellers)
+					{
 					if(pUser.equals("admin"))
 					{
 						if(pPass.equals("changeme"))
@@ -131,14 +136,14 @@ public class AuctionSystem {
 							return pUser;
 						}
 					}
-					/*
-					if(pUser == Sellers.iterator().next().GetUsername());
+					
+					if(pUser.equals(s.GetUsername()))
 				{
-					if(Sellers.iterator().next().CheckPassword(pPass))
+					if(pPass.equals(s.CheckPassword(pPass)))
 						return pUser;
 				}
-				*/
-					
+				
+					}
 				}
 				else if(type.equals("buying"));
 					//for(Buyer b: Buyers);
