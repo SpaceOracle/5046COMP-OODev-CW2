@@ -83,6 +83,15 @@ public class AuctionSystem {
 		String type = "selling";
 		if (LogIn(pUser, pPass, type) == pUser) {
 			System.out.println("Login successful " + pUser);
+			System.out.println("Please enter a starting price");
+			double t_sPrice = cin.nextDouble();
+			System.out.println("Please enter a reserve price");
+			double t_rPrice = cin.nextDouble();
+			System.out.println("Please enter a name for your auction");
+			String t_desc = cin.next();
+			Auction newAuction = new Auction(t_sPrice, t_rPrice, LocalDateTime.now().plusDays(7), t_desc);
+			Auctions.add((Auction) newAuction);
+			return;
 		} else if (LogIn(pUser, pPass, type) == "NULL") {
 			System.out.println("Login failed");
 		}
