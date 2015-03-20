@@ -12,7 +12,9 @@ public class AuctionSystem {
 	
 	static int arraySize = 10; //Temporary array size variable
 	
-	static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
+	//static Auction auctions = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
+	
+	static ArrayList<Auction> Auctions = new ArrayList<Auction>();
 	
 	static ArrayList<Buyer> Buyers = new ArrayList<Buyer>();
 	static ArrayList<Seller> Sellers = new ArrayList<Seller>();
@@ -24,6 +26,13 @@ public class AuctionSystem {
 		User adminSell = new Seller("admin","changeme");
 
 		Sellers.add((Seller) adminSell);
+		
+		Auction chocbar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
+		Auctions.add((Auction) chocbar);
+		Auction toffee = new Auction(3, 10, LocalDateTime.of(2015, 9, 5, 12, 30));
+		Auctions.add((Auction) toffee);
+		Auction cookie = new Auction(7, 10, LocalDateTime.of(2015, 2, 9, 1, 30));
+		Auctions.add((Auction) cookie);
 		
 		//Auction ChocBar = new Auction(5, 10, LocalDateTime.of(2014, 7, 15, 12, 30));
 		
@@ -54,6 +63,10 @@ public class AuctionSystem {
 				System.exit(0);
 			case "0": //Debug close expired auctions
 				//TODO add calls to close in all existing auctions
+				for(Auction a: Auctions)
+				{
+					a.Close();
+				}
 				break;
 			}
 		}
@@ -81,8 +94,17 @@ public class AuctionSystem {
 		//No return type: output to console
 		//Note: Used by PlaceBid and Browsers, don't expect input
 		
-		System.out.println(AuctionSystem.auctions);
+		//System.out.println(AuctionSystem.auctions);
 		//TODO fix me
+		
+		for(Auction a: Auctions)
+		{
+			if(a.GetStatus() == 'O')
+			{
+				System.out.println(a.GetDescription());
+				System.out.println(a.GetHighest());
+			}
+		}
 	}
 	
 	public void SetupAccount() {

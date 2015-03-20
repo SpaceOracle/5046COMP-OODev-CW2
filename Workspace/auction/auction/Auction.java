@@ -71,7 +71,19 @@ public class Auction implements Blockable {
 		
 	}
 	
-	public void SetDescription(){
+	public void SetDescription(String desc){
 		description.SetDescription();
+	}
+	
+	public String GetDescription(){
+		return description.GetDescription();
+	}
+	
+	public char GetStatus(){
+		return status;
+	}
+	
+	public double GetHighest(){
+		return currentHighest.GetAmount();
 	}
 }

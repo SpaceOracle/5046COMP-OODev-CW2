@@ -8,7 +8,7 @@ public class Item {
 		
 	}
 	
-	private String description;
+	private String description = "Change me";
 	
 	public String GetDescription(){
 		return description;
