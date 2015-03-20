@@ -13,22 +13,23 @@ public class Auction implements Blockable {
 	//private Bid currentHighest;
 	private Bid currentHighest = new Bid();
 	
-	public Auction(double startPrice, double reservePrice, LocalDateTime closeDate) {
+	public Auction(double startPrice, double reservePrice, LocalDateTime closeDate, String desc) {
 		this.startPrice = startPrice;
 		this.reservePrice = reservePrice;
 		this.closeDate = closeDate;
 		status = 'O';
 		currentHighest.SetAmount(this.startPrice);
+		SetDescription(desc);
 	}
 	
 	public void PlaceBid(){
-		Scanner bidder = new Scanner(System.in);
+		//Scanner bidder = new Scanner(System.in);
 		
 		System.out.println("Please enter a new bid for this item");
 		
-		double t_bid;
+		//double t_bid;
 		
-		t_bid = bidder.nextDouble();
+		double t_bid = AuctionSystem.cin.nextDouble();
 		
 		if(t_bid < currentHighest.GetAmount())
 		{
@@ -38,9 +39,10 @@ public class Auction implements Blockable {
 		{
 			System.out.println("Bid placed, congratulations");
 			currentHighest.SetAmount(t_bid);
+			currentHighest.SetWhen(LocalDateTime.now());
 		}
 		
-		bidder.close();
+		//bidder.close();
 	}
 	
 	public void Verify(){
@@ -76,7 +78,7 @@ public class Auction implements Blockable {
 	}
 	
 	public void SetDescription(String desc){
-		description.SetDescription();
+		description.SetDescription(desc);
 	}
 	
 	public String GetDescription(){
