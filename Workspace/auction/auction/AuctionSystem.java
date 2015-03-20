@@ -122,12 +122,12 @@ public class AuctionSystem {
 			{
 				//get user
 				//compare
-				if(type == "selling")
+				if(type.equals("selling"))
 				{
-					for(Seller s : Sellers);
-					if(pUser == "admin")
+					//for(Seller s : Sellers);
+					if(pUser.equals("admin"))
 					{
-						if(pPass == "changeme")
+						if(pPass.equals("changeme"))
 						{
 							return pUser;
 						}
@@ -141,11 +141,11 @@ public class AuctionSystem {
 				*/
 					
 				}
-				else if(type == "buying");
-					for(Buyer b: Buyers);
-					if(pUser == "admin")
+				else if(type.equals("buying"));
+					//for(Buyer b: Buyers);
+					if(pUser.equals("admin"))
 					{
-						if(pPass == "changeme")
+						if(pPass.equals("changeme"))
 						{
 							return pUser;
 						}
