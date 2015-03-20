@@ -27,4 +27,13 @@ public class Bid {
 	public void SetWhen(LocalDateTime date){
 		when = date;
 	}
+	
+	public LocalDateTime GetWhen(){
+		return when;
+	}
+	
+	public void SetBuyer(Buyer buyer)
+	{
+		who = buyer;
+	}
 }

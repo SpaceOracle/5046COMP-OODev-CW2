@@ -26,6 +26,7 @@ public class Auction implements Blockable {
 		//Scanner bidder = new Scanner(System.in);
 		
 		System.out.println("Please enter a new bid for this item");
+		System.out.println("Bid can be a maximum of 20% of the current highest bid");
 		
 		//double t_bid;
 		
@@ -37,9 +38,17 @@ public class Auction implements Blockable {
 		}
 		else if(t_bid > currentHighest.GetAmount())
 		{
-			System.out.println("Bid placed, congratulations");
-			currentHighest.SetAmount(t_bid);
-			currentHighest.SetWhen(LocalDateTime.now());
+			double t_highest = currentHighest.GetAmount() * 1.2;
+			if(t_bid > t_highest)
+			{
+				System.out.println("Bid too high");
+			}
+			else if(t_bid <= t_highest)
+			{
+				System.out.println("Bid placed, congratulations");
+				currentHighest.SetAmount(t_bid);
+				currentHighest.SetWhen(LocalDateTime.now());
+			}
 		}
 		
 		//bidder.close();
