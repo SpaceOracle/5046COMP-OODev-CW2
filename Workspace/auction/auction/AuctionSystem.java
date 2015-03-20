@@ -101,8 +101,7 @@ public class AuctionSystem {
 		{
 			if(a.GetStatus() == 'O')
 			{
-				System.out.println(a.GetDescription());
-				System.out.println(a.GetHighest());
+				System.out.println(a.GetDescription() + " " + a.GetHighest());
 			}
 		}
 	}
