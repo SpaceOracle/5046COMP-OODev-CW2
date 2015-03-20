@@ -10,13 +10,9 @@ public abstract class User {
 	}
 	
 	public Boolean CheckPassword(String pass){
-		if(pass == password)
+		if(pass.equals(password))
 		{
 			return true;
-		}
-		else if(pass != password)
-		{
-			return false;
 		}
 		
 		return false;
